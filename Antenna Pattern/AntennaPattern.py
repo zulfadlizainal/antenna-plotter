@@ -1,7 +1,7 @@
 #Created by github.com/zulfadlizainal
 
 import pandas as pd
-from math import pi
+import numpy as np
 import matplotlib.pyplot as plt
 
 ant_df = pd.read_csv('AntPatternDB.csv', encoding='shift-jis')
@@ -64,5 +64,34 @@ draw_V_Loss = draw_V_Loss.reset_index(drop=True)
 
 draw_df = pd.concat([draw_H_Deg, draw_H_Loss, draw_V_Loss], axis = 1)
 draw_df.columns = ['Angle', 'H_Loss', 'V_Loss']
+draw_df['Angle'] = draw_df['Angle'].astype(int)
+draw_df['H_Loss'] = draw_df['H_Loss'].astype(float)
+draw_df['V_Loss'] = draw_df['V_Loss'].astype(float)
+draw_df['Radians'] = draw_df['Angle']*np.pi/180
 
-## TODO: Plotting Antenna Pattern
+plot_theta = draw_df['Radians'].tolist()
+plot_hloss = draw_df['H_Loss'].tolist()
+plot_vloss = draw_df['V_Loss'].tolist()
+
+#Plotting Antenna Pattern
+
+# TODO: Plotting cosmetics
+
+#Define Plot Dimension
+w = 4
+h = 3
+d = 70
+
+#Horizontal Antenna Pattern
+plt.figure(figsize=(w, h), dpi=d)
+h_ant = plt.subplot(111, projection='polar')
+h_ant.plot(plot_theta, plot_hloss)
+h_ant.set_ylim(50,0)
+
+#Vertical Antenna Pattern
+plt.figure(figsize=(w, h), dpi=d)
+v_ant = plt.subplot(111, projection='polar')
+v_ant.plot(plot_theta, plot_vloss)
+v_ant.set_ylim(50,0)
+
+plt.show()
