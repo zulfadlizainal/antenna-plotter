@@ -1,4 +1,5 @@
 #Created by github.com/zulfadlizainal
+# coding: utf8
 
 import pandas as pd
 import numpy as np
