@@ -13,5 +13,4 @@ Python Library: pandas, numpy, matplotlib.
 Input: Antenna pattern database
 Output: Horizontal and Vertical antenna pattern.
 
-![Antenna Patter List](data:https://github.com/zulfadlizainal/RF_MobileWireless/blob/master/img/AntPat_AntList.png
-)
+<img src="https://github.com/zulfadlizainal/RF_MobileWireless/blob/master/img/AntPat_AntList.png" alt="Kitten" title="A cute kitten" width="150" height="100" />
