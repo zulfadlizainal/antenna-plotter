@@ -19,12 +19,6 @@ Output: Horizontal and Vertical antenna pattern.**
 **Result**
 <br />
 <br />
-*Antenna Pattern List*
-<br />
-<br />
-<img src="https://github.com/zulfadlizainal/RF_MobileWireless/blob/master/img/AntPat_AntList.png" alt="Antenna Pattern Database" title="List of Antenna Pattern" width=100% height=100% />
-<br />
-<br />
 *Horizontal Antenna Pattern*
 <br />
 <br />
