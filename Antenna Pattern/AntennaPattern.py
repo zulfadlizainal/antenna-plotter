@@ -76,7 +76,7 @@ plot_vloss = draw_df['V_Loss'].tolist()
 
 #Plotting Antenna Pattern
 
-# TODO: Plotting Cosmetics
+# TODO: Plotting Cosmetics/Label
 
 #Define Plot Dimension
 w = 4
