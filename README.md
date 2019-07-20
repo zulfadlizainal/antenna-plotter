@@ -6,7 +6,7 @@ Collections of mini projects, simulations, and calculations for Wireless Mobile 
 
 ## 1. Antenna Pattern Plotter ([Link](https://github.com/zulfadlizainal/RF_MobileWireless/tree/master/Antenna%20Pattern))
 
-Description: This program will read your antenna pattern database and plot the antenna pattern based on angular loss.
+This program will read your antenna pattern database and plot the antenna pattern based on angular loss.
 <br />
 <br />
 **Python Library: pandas, numpy, matplotlib.
