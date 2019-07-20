@@ -1,5 +1,4 @@
 #Created by github.com/zulfadlizainal
-# coding: utf8
 
 import pandas as pd
 import numpy as np
@@ -40,13 +39,19 @@ print(' ')
 
 #Select Antenna Pattern for display
 
-select = int(input("Input Antenna Index Number: "))
+select = int(input("Antenna Pattern Number: "))
+azimuth = int(input("Antenna Azimuth (°): "))
+mtilt = int(input("Antenna Mechanical Tilt (°): "))
+
+#Prepare dataframe for selected antenna
 
 draw = ant_df_new.loc[select,'Pattern']
 draw = draw.split(' ')
 draw = pd.DataFrame(draw)
 draw.drop(draw.index[[0,1,2,3,724,725,726,727,1448,1449,1450]], inplace = True)
 draw = draw.reset_index(drop=True)
+
+#Seperate Horizontal and Vertical DataFrame
 
 draw_H = draw.iloc[0:720,:]
 draw_H = draw_H.reset_index(drop=True)
@@ -70,29 +75,51 @@ draw_df['H_Loss'] = draw_df['H_Loss'].astype(float)
 draw_df['V_Loss'] = draw_df['V_Loss'].astype(float)
 draw_df['Radians'] = draw_df['Angle']*np.pi/180
 
+#Extract ETilt Value
+
+etilt = ant_df_new.loc[select, 'Etilt (°)']
+
+#Dataframe to List
+
 plot_theta = draw_df['Radians'].tolist()
 plot_hloss = draw_df['H_Loss'].tolist()
 plot_vloss = draw_df['V_Loss'].tolist()
 
+#Shift dataframe based on azimuth and tilt
+
+def rotate(l, n):
+    return l[-n:] + l[:-n]
+
+#List to plot
+
+plot_hloss = rotate(plot_hloss, azimuth)
+plot_vloss = rotate(plot_vloss, mtilt+etilt)
+
 #Plotting Antenna Pattern
 
-# TODO: Plotting Cosmetics/Label
-
-#Define Plot Dimension
-w = 4
-h = 3
-d = 70
-
 #Horizontal Antenna Pattern
-plt.figure(figsize=(w, h), dpi=d)
-h_ant = plt.subplot(111, projection='polar')
+plt.figure()
+h_ant = plt.subplot(2,2,1, projection='polar')
+h_ant.set_theta_direction(-1)           #Clockwise plot
 h_ant.plot(plot_theta, plot_hloss)
+plt.title("Horizontal Antenna Pattern\n   ")
+h_ant.set_theta_zero_location("N")
 h_ant.set_ylim(50,0)
+plt.xlabel(f"Azimuth = {azimuth}°")
 
 #Vertical Antenna Pattern
-plt.figure(figsize=(w, h), dpi=d)
-v_ant = plt.subplot(111, projection='polar')
+v_ant = plt.subplot(2,2,2, projection='polar')
+v_ant.set_theta_direction(-1)           #Clockwise plot
 v_ant.plot(plot_theta, plot_vloss)
+plt.title("Vertical Antenna Pattern\n   ")
+v_ant.set_theta_zero_location("E")
 v_ant.set_ylim(50,0)
+plt.xlabel(f"MTilt + ETilt = {mtilt+etilt}°")
 
 plt.show()
+
+print(' ')
+print('ありがとうございました！！')
+print('Download this program: https://github.com/zulfadlizainal')
+print('Author: https://www.linkedin.com/in/zulfadlizainal')
+print(' ')
