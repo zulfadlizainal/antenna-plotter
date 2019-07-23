@@ -1,4 +1,4 @@
-# Antenna Pattern Plotter
+# Antenna Pattern
 
 This program will read your antenna pattern database and plot the antenna pattern based on angular loss.
 
