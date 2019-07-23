@@ -4,7 +4,7 @@ General antenna pattern simulations and plotter specific for mobile wireless eng
 
 ### List of projects
 
-## 1. Antenna Pattern Plotter ([Link](https://github.com/zulfadlizainal/RF-Antenna-Pattern/tree/master/Antenna%20Pattern))
+## 1. Antenna Pattern ([Link](https://github.com/zulfadlizainal/RF-Antenna-Pattern/tree/master/Antenna%20Pattern))
 
 This program will read your antenna pattern database and plot the antenna pattern based on angular loss.
 <br />
@@ -13,7 +13,7 @@ This program will read your antenna pattern database and plot the antenna patter
 <br />
 <br />
 
-## 2. 3 Sector Antenna Pattern Plotter ([Link](https://github.com/zulfadlizainal/RF-Antenna-Pattern/tree/master/3%20Sector%20Antenna%20Pattern))
+## 2. 3 Sector Antenna Pattern ([Link](https://github.com/zulfadlizainal/RF-Antenna-Pattern/tree/master/3%20Sector%20Antenna%20Pattern))
 
 This program will help you estimate coverage side lobe overlapping for 3 sector base station implementation based on selected antenna pattern and azimuth.
 <br />
