@@ -122,12 +122,15 @@ draw_df3['Radians'] = draw_df3['Angle']*np.pi/180
 #Dataframe to List (All 3 Sectors)
 
 plot_theta1 = draw_df1['Radians'].tolist()
+plot_theta1_deg = draw_df1['Angle'].tolist()
 plot_hloss1 = draw_df1['H_Loss'].tolist()
 
 plot_theta2 = draw_df2['Radians'].tolist()
+plot_theta2_deg = draw_df2['Angle'].tolist()
 plot_hloss2 = draw_df2['H_Loss'].tolist()
 
 plot_theta3 = draw_df3['Radians'].tolist()
+plot_theta3_deg = draw_df3['Angle'].tolist()
 plot_hloss3 = draw_df3['H_Loss'].tolist()
 
 
@@ -170,8 +173,22 @@ h_ant3.set_theta_zero_location("N")
 h_ant3.set_ylim(50,0)
 
 plt.xlabel(f"\n\nSec 1 Azimuth = {azimuth1}°\nSec 2 Azimuth = {azimuth2}°\nSec 3 Azimuth = {azimuth3}°")
-
 plt.legend(fontsize = 'small' ,loc='upper center', bbox_to_anchor = (0.5, -0.1), ncol = 5, frameon = False)
+
+#Plotting Antenna Radiation Overlapping
+
+plt.figure()
+plt.plot(plot_theta1_deg, plot_hloss1, color = 'r', label = 'Sec 1')
+plt.plot(plot_theta2_deg, plot_hloss2, color = 'y', label = 'Sec 2')
+plt.plot(plot_theta3_deg, plot_hloss3, color = 'g', label = 'Sec 3')
+plt.gca().invert_yaxis()
+
+plt.xlabel('Direction (°)')
+plt.ylabel('Loss (dB)')
+plt.title('Antenna Radiation Overlapping Area')
+plt.legend(fontsize = 'small' ,loc='best', frameon = False)
+
+
 plt.show()
 
 print(' ')
