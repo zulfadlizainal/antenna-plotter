@@ -1,6 +1,6 @@
-# RF Mobile Wireless
+# RF Antenna Pattern
 
-Collections of mini projects, simulations, and calculations for Wireless Mobile Engineering.
+General antenna pattern simulations and plotter specific for mobile wireless engineering.
 
 ### List of projects
 
