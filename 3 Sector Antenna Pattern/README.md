@@ -31,7 +31,7 @@ Antenna pattern data often given as below format.
 
 ### Result
 
-Expected result based on input Azimuth and Tilt.
+Expected result based on input Azimuth and selected antenna pattern.
 <br />
 <br />
 <img src="https://github.com/zulfadlizainal/RF-Antenna-Pattern/blob/master/img/3Sec_Result.png" alt="Result" title="Result" width=100% height=100% />
