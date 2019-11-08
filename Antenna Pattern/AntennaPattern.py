@@ -93,7 +93,7 @@ def rotate(l, n):
 #List to plot
 
 plot_hloss = rotate(plot_hloss, azimuth)
-plot_vloss = rotate(plot_vloss, mtilt+etilt)
+plot_vloss = rotate(plot_vloss, mtilt)
 
 #Plotting Antenna Pattern
 
