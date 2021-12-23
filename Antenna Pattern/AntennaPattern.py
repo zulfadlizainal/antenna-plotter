@@ -116,6 +116,7 @@ v_ant.set_theta_zero_location("E")
 v_ant.set_ylim(50,0)
 plt.xlabel(f"MTilt + ETilt = {mtilt+etilt}°")
 
+plt.savefig('AntPat.png', dpi=300, bbox_inches='tight')
 plt.show()
 
 print(' ')
